@@ -2,6 +2,6 @@
 
 Run 
 
-  minion
+    index.php --uri=minion
 
 for more help

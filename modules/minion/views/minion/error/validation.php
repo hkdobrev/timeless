@@ -1,10 +1,10 @@
 Parameter Errors:
 <?php foreach ($errors as $parameter => $error): ?>
-    <?php echo Minion_CLI::color($parameter, 'light_green'); ?> - <?php echo Minion_CLI::color($error, 'red'); ?>
+    <?php echo $parameter; ?> - <?php echo $error; ?> 
 <?php endforeach; ?>
 
 Run
 
-    ./minion <?php echo Minion_CLI::color($task, 'cyan') ?> --help
+    php index.php --task=<?php echo $task?> --help
 
 for more help
