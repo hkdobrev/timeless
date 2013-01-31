@@ -1,0 +1,2 @@
+#! /bin/bash
+./vendor/phpunit/phpunit/composer/bin/phpunit --bootstrap=modules/unittest/bootstrap_all_modules.php "$@" modules/unittest/tests.php
