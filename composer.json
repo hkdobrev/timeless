@@ -1,0 +1,13 @@
+{
+    "name": "hkdobrev/timeless",
+    "description": "Timeless blog inspired by timelessrepo.com",
+    "authors": [
+        {
+            "name": "Haralan Dobrev",
+            "email": "hkdobrev@gmail.com"
+        }
+    ],
+    "require": {
+        "phpunit/phpunit": "3.7.*"
+    }
+}
