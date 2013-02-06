@@ -276,14 +276,14 @@ class Kohana_Arr {
 	{
 		if (is_null($array))
 			return $default;
-		
+
 		if ( ! is_array($array) AND ! $array instanceof ArrayAccess)
 			throw new Kohana_Exception('Argument 1 to Arr::get() must be an array or an instance of ArrayAccess');
-		
+
 		// using isset for performance reasons
 		if (isset($array[$key]))
 			return $array[$key];
-		
+
 		if (is_array($array))
 		{
 			if (array_key_exists($key, $array))
@@ -303,7 +303,7 @@ class Kohana_Arr {
 	 *
 	 *     // Get the values "username", "password" from $_POST
 	 *     $auth = Arr::extract($_POST, array('username', 'password'));
-	 *     
+	 *
 	 *     // Get the value "level1.level2a" from $data
 	 *     $data = array('level1' => array('level2a' => 'value 1', 'level2b' => 'value 2'));
 	 *     Arr::extract($data, array('level1.level2a', 'password'));
