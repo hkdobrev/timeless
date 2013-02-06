@@ -274,7 +274,27 @@ class Kohana_Arr {
 	 */
 	public static function get($array, $key, $default = NULL)
 	{
-		return isset($array[$key]) ? $array[$key] : $default;
+		if (is_null($array))
+			return $default;
+		
+		if ( ! is_array($array) AND ! $array instanceof ArrayAccess)
+			throw new Kohana_Exception('Argument 1 to Arr::get() must be an array or an instance of ArrayAccess');
+		
+		// using isset for performance reasons
+		if (isset($array[$key]))
+			return $array[$key];
+		
+		if (is_array($array))
+		{
+			if (array_key_exists($key, $array))
+				return $array[$key];
+		}
+		elseif ($array->offsetExists($key))
+		{
+			return $array[$key];
+		}
+
+		return $default;
 	}
 
 	/**
